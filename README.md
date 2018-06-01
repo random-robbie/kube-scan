@@ -2,7 +2,7 @@
 Kubernetes Scanner
 
 Requirements:
-----
+---
 
 ```
 sudo apt-get install masscan jq curl -y
@@ -12,7 +12,7 @@ sudo apt-get install masscan jq curl -y
 
 How to run:
 
-----
+---
 
 ```
 ./kube.sh 192.168.1.0/24
