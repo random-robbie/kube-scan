@@ -9,7 +9,7 @@ awk '/^Host:/ { print $2 }' results.txt > ip_results.txt
 echo "[*] Grabbing Results and Testing Them [*]"
 for ip in `cat ip_results.txt`; do
 		echo "[*] Testing $ip for Kubernetes [*]"
-        curl -sSLk --connect-timeout 10 https://$ip:10250/pods | jq . > ./cfg/$ip.json
+        	timeout 10s curl -sSLk --connect-timeout 10 https://$ip:10250/pods | jq . > ./cfg/$ip.json
 done
 cd cfg
 find -type f -empty -delete
